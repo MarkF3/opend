@@ -1,19 +1,19 @@
 {
   "canisters": {
-    "opend_backend": {
-      "main": "src/opend_backend/main.mo",
+    "opend": {
+      "main": "src/opend/main.mo",
       "type": "motoko"
     },
-    "opend_frontend": {
+    "opend_assets": {
       "dependencies": [
-        "opend_backend"
+        "opend"
       ],
       "frontend": {
-        "entrypoint": "src/opend_frontend/src/index.html"
+        "entrypoint": "src/opend_assets/src/index.html"
       },
       "source": [
-        "src/opend_frontend/assets",
-        "dist/opend_frontend/"
+        "src/opend_assets/assets",
+        "dist/opend_assets/"
       ],
       "type": "assets"
     }
@@ -24,6 +24,12 @@
       "packtool": ""
     }
   },
-  "output_env_file": ".env",
+  "dfx": "0.9.3",
+  "networks": {
+    "local": {
+      "bind": "127.0.0.1:8000",
+      "type": "ephemeral"
+    }
+  },
   "version": 1
 }
